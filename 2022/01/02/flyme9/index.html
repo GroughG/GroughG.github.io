@@ -64,8 +64,8 @@
   --color-card: #fff;
   --color-text: #444;
   --color-block: #f6f6f6;
-  --color-inlinecode: #d56d28;
-  --color-codeblock: #fff7ea;
+  --color-inlinecode: rgba(255,0,0,0);
+  --color-codeblock: rgba(255,0,0,0);
   --color-h1: #444;
   --color-h2: #444;
   --color-h3: #444;
@@ -74,7 +74,7 @@
   --color-h6: #444;
   --color-p: #444;
   --color-list: #666;
-  --color-list-hl: #00c;
+  --color-list-hl: rgba(0,0,0,0.2);
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
@@ -96,13 +96,13 @@
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: #00f;
+  background: rgba(255,0,0,0);
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #0090ff;
+  background: rgba(255,0,0,0);
 }
 html {
   color: var(--color-text);
@@ -119,13 +119,13 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #00f;
+  background: rgba(255,0,0,0);
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: #0090ff;
+  background: rgba(255,0,0,0);
 }
 body {
   background-color: var(--color-site-body);
@@ -148,7 +148,7 @@ body.modal-active {
   }
 }
 a {
-  color: #00f;
+  color: rgba(255,0,0,0);
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -159,7 +159,7 @@ a {
   -ms-transition: all 0.28s ease;
 }
 a:hover {
-  color: #0090ff;
+  color: rgba(255,0,0,0);
 }
 a:active,
 a:hover {
@@ -773,7 +773,7 @@ button {
 .cover-wrapper.dock .menu .list-h a.active i+p,
 .cover-wrapper.featured .menu .list-h a.active i+p,
 .cover-wrapper.focus .menu .list-h a.active i+p {
-  color: #00f;
+  color: rgba(255,0,0,0);
 }
 .cover-wrapper.dock .menu .list-h a.active img+p,
 .cover-wrapper.featured .menu .list-h a.active img+p,
@@ -887,7 +887,7 @@ button {
     --color-h6: #ddd;
     --color-p: #bbb;
     --color-list: #aaa;
-    --color-list-hl: #3232ff;
+    --color-list-hl: rgba(255,255,255,0.2);
     --color-meta: #888;
     --color-link: #888;
     --color-copyright-bkg: #21252b;
@@ -959,7 +959,7 @@ button {
   --color-h6: #ddd;
   --color-p: #bbb;
   --color-list: #aaa;
-  --color-list-hl: #3232ff;
+  --color-list-hl: rgba(255,255,255,0.2);
   --color-meta: #888;
   --color-link: #888;
   --color-copyright-bkg: #21252b;
@@ -1228,7 +1228,7 @@ button {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  color: #00f;
+  color: rgba(255,0,0,0);
 }
 .l_header .switcher >li >a:hover {
   border: none;
@@ -1408,7 +1408,7 @@ ul.m-pc >li>a {
 }
 ul.m-pc >li>a:active,
 ul.m-pc >li>a.active {
-  border-bottom: 2px solid #00f;
+  border-bottom: 2px solid rgba(255,0,0,0);
 }
 ul.m-pc li:hover >ul.list-v,
 ul.list-v li:hover >ul.list-v {
@@ -1547,7 +1547,7 @@ ul.list-v >li>a:hover {
 }
 .l_header ul.nav-list-h>li >a:active,
 .l_header ul.nav-list-h>li >a.active {
-  color: #00f;
+  color: rgba(255,0,0,0);
 }
 .l_header ul.nav-list-h>li:hover>a {
   color: var(--color-list-hl);
@@ -2338,7 +2338,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669859727913),
+    lastupdate: new Date(1669954674115),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2367,6 +2367,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         enable:true
       },
       
+      
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":["hr"],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
       
     },
     search: {
@@ -2746,49 +2748,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               
               active-action="action-home">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>首页</p>
+              <img src='/img/1f396.svg'><p>首页</p>
             </a>
           
             <a href="/tags/"
               
               
               active-action="action-tags">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>标签</p>
+              <img src='/img/1f516.svg'><p>标签</p>
             </a>
           
             <a href="/categories/"
               
               
               active-action="action-categories">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>分类</p>
+              <img src='/img/1f5c3.svg'><p>分类</p>
             </a>
           
             <a href="/friends/"
               
               
               active-action="action-friends">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>友链</p>
+              <img src='/img/1f389.svg'><p>友链</p>
             </a>
           
             <a href="/archives/"
               
               
               active-action="action-archives">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>归档</p>
+              <img src='/img/1f4f0.svg'><p>归档</p>
             </a>
           
             <a href="/projects/"
               
               
               active-action="action-projects">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0.2/assets/svg/1fa85.svg'><p>项目</p>
+              <img src='/img/1fa85.svg'><p>项目</p>
             </a>
           
             <a href="/about/"
               
               
               active-action="action-about">
-              <img src='https://gcore.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>关于</p>
+              <img src='/img/1f9ec.svg'><p>关于</p>
             </a>
           
         
@@ -2908,13 +2910,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <div galleryFlag itemscope itemtype="http://schema.org/ImageGallery" class="gallery " data-group='default'><div class='fancybox'><a class='fancybox' pjax-fancybox itemscope itemtype="http://schema.org/ImageObject" itemprop="url" target="_blank" rel="noopener" href='https://www.bandbbs.cn/attachments/12232/' data-fancybox='default' data-caption='图标预览'><img fancybox itemprop="contentUrl" src="https://www.bandbbs.cn/attachments/12232/" class="lazyload" data-srcset="https://www.bandbbs.cn/attachments/12232/" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图标预览"></a><span class='image-caption'>图标预览</span></div></div>
-<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><div class="story post-story"><p>此资源包是使用魅族图标制作的一套适用于小米手环5的资源包，目前已适配100+图标，详情请点击下面链接进入米坛。</p>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>此资源包是使用魅族图标制作的一套适用于小米手环5的资源包，目前已适配100+图标，详情请点击下面链接进入米坛。</p>
 <div class="tag link"><a class="link-card" title="Flyme 9 for MI BAND5" target="_blank" rel="noopener" href="https://www.bandbbs.cn/resources/1122/"><div class="left"><img src="https://www.bandbbs.cn/data/resource_icons/0/733.jpg?1629008793" class="lazyload" data-srcset="https://www.bandbbs.cn/data/resource_icons/0/733.jpg?1629008793" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">Flyme 9 for MI BAND5</p><p class="url">https://www.bandbbs.cn/resources/1122/</p></div></a></div>
 
 <div galleryFlag itemscope itemtype="http://schema.org/ImageGallery" class="gallery " data-group='default'><div class='fancybox'><a class='fancybox' pjax-fancybox itemscope itemtype="http://schema.org/ImageObject" itemprop="url" target="_blank" rel="noopener" href='https://s2.loli.net/2022/01/30/XS8zIDJrlcb2Kd7.jpg' data-fancybox='default' data-caption='G STUDIO'><img fancybox itemprop="contentUrl" src="https://s2.loli.net/2022/01/30/XS8zIDJrlcb2Kd7.jpg" class="lazyload" data-srcset="https://s2.loli.net/2022/01/30/XS8zIDJrlcb2Kd7.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="G STUDIO"></a><span class='image-caption'>G STUDIO</span></div></div>
 
-</div><h2 id="版权提醒"><a href="#版权提醒" class="headerlink" title="版权提醒"></a>版权提醒</h2><div class="story post-story"><p>此图标中所有图标版权归魅族公司所有<br>Flyme，魅族穿戴，魅族是魅族公司的商标<br>本资源包由G STUDIO制作，禁止未经允许的完全盗用<br>请注意：仅资源仅在个人博客和米坛发布，若您在其他平台看到此资源，请立刻举报</p>
-</div><h2 id="更新历史（点击版本号跳转米坛下载）"><a href="#更新历史（点击版本号跳转米坛下载）" class="headerlink" title="更新历史（点击版本号跳转米坛下载）"></a>更新历史（点击版本号跳转米坛下载）</h2><div class="story post-story"><div class="timeline">
+<h2 id="版权提醒"><a href="#版权提醒" class="headerlink" title="版权提醒"></a>版权提醒</h2><p>此图标中所有图标版权归魅族公司所有<br>Flyme，魅族穿戴，魅族是魅族公司的商标<br>本资源包由G STUDIO制作，禁止未经允许的完全盗用<br>请注意：仅资源仅在个人博客和米坛发布，若您在其他平台看到此资源，请立刻举报</p>
+<h2 id="更新历史（点击版本号跳转米坛下载）"><a href="#更新历史（点击版本号跳转米坛下载）" class="headerlink" title="更新历史（点击版本号跳转米坛下载）"></a>更新历史（点击版本号跳转米坛下载）</h2><div class="timeline">
 <div class="timenode"><div class="meta"><p><p>2022-01-14 <a target="_blank" rel="noopener" href="https://www.bandbbs.cn/resources/1122/version/1961/download">2.2</a></p>
 </p></div><div class="body"><p>新增flyme部分运动图标，为你开启运动新体验！<br>优化部分图标，美化更细节</p></div></div>
 
@@ -2928,14 +2930,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </p></div><div class="body"><p>更换部分Flyme9图标</p></div></div>
 </div>
 
-</div><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><div class="story post-story"><div class="btns rounded center grid5">
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><div class="btns rounded center grid5">
             <a class="button" target="_blank" rel="noopener" href='https://www.bandbbs.cn/resources/1122/download/' title='米坛下载（需登录）'><i class='fas fa-download'></i>米坛下载（需登录）</a>
 
 <a class="button" target="_blank" rel="noopener" href='https://wwi.lanzouw.com/iCnaqzahw6f/' title='抗揍云下载'><i class='fas fa-download'></i>抗揍云下载</a>
 
           </div>
 
-</div>
   </div>
   
   
@@ -3056,7 +3057,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 启动预览
 1hexo server
 
-
 </p>
         </a>
       
@@ -3122,6 +3122,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='content'>
     <ul class="list entry navigation">
       
+        <li><a class="flat-box" title="/2021/06/17/GOS/" href="/2021/06/17/GOS/"
+          
+          
+          active-action="action-20210617GOS"
+          >
+          <div class='name'>
+            
+            GOS for MI BAND5
+          </div>
+          
+        </a></li>
+      
         <li><a class="flat-box" title="/2022/01/02/flyme9/" href="/2022/01/02/flyme9/"
           
           
@@ -3142,18 +3154,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <div class='name'>
             
             Flyme 8 for MI BAND5
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="/2021/06/17/GOS/" href="/2021/06/17/GOS/"
-          
-          
-          active-action="action-20210617GOS"
-          >
-          <div class='name'>
-            
-            GOS for MI BAND5
           </div>
           
         </a></li>
@@ -3308,7 +3308,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-12-01 日</div>
+          <div id="last-update-show">2022-12-02 日</div>
         </div>
       
     </div>
@@ -3504,6 +3504,303 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script src="/js/app.js"></script>
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-arrow-left fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-arrow-right fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-redo fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-solid fa-arrow-up fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-solid fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-solid fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-solid fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-solid fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-solid fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-solid fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyImg" data-event="copyImg" data-group="elementImage">
+      <i class="fa-solid fa-image fa-fw"></i>
+      复制图片
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="googleImg" data-event="window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)" data-group="elementImage">
+      <i class="fa-solid fa-images fa-fw"></i>
+      谷歌识图
+    </span>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-solid fa-moon fa-fw"></i>
+      暗黑模式
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-solid fa-print fa-fw"></i>
+      打印页面
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-solid fa-book-open fa-fw"></i>
+      阅读模式
+    </span>
+  </li>
+
+
+<div id="menuMusic">
+  <li class='music name menuOption-Content'>
+    <p class='nav music-title fix-cursor-default'></p>
+  </li>
+  <li class='music ctrl'>
+    <a class='nav icon-only backward fix-cursor-default'  title="backward">
+      <i class='fa-solid fa-step-backward fa-fw'></i>
+    </a>
+    <a class='nav icon-only toggle fix-cursor-default'  title="toggle">
+      <i class='fa-solid fa-play fa-fw'></i>
+    </a>
+    <a class='nav icon-only forward fix-cursor-default'  title="forward">
+      <i class='fa-solid fa-step-forward fa-fw'></i>
+    </a>
+  </li>
+  <li class='music volume'>
+    <div class='nav volume'>
+      <div class="aplayer-volume-bar-wrap">
+        <div class="aplayer-volume-bar fix-cursor-pointer">
+          <div class="aplayer-volume"></div>
+          <i class='left fa-solid fa-volume-off fa-fw'></i>
+          <i class='right fa-solid fa-volume-up fa-fw'></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.js"></script>
+<script>
+  const RightMenusFunction = {};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  //RightMenusFunction['copyPaste'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyAll'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyCut'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyText'] = (fun) => {fun()}
+
+
+
+
+
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+
+
+
+
+
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+
+
+
+
+
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+
+
+
+
+
+  //RightMenusFunction['copyLink'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['copyImg'] = (fun) => {fun()}
+
+
+
+
+
+  RightMenusFunction['googleImg'] = (__link__) => {window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)}
+
+
+
+
+
+
+
+
+
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+
+
+
+
+
+  //RightMenusFunction['printMode'] = (fun) => {fun()}
+
+
+
+
+
+  //RightMenusFunction['readMode'] = (fun) => {fun()}
+
+
+
+
+
+</script>
 
 
 
@@ -3714,6 +4011,9 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       await volantis.js("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js")
       await volantis.js("https://unpkg.com/meting@2/dist/Meting.min.js")
     
+      // 右键 music 需要在 APlayer  MetingJS 之后加载
+      await volantis.js('/js/plugins/aplayer.js')
+    
     })();
 
     function SetAPlayerPlugin(){
@@ -3919,7 +4219,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["/img/015.jpg","/img/008.jpg","/img/019.jpg","/img/009.jpg","/img/01c8f15aeac135a801207fa16836ae.jpg@1280w_1l_2o_100sh.jpg"];
+  let imgs = ["/img/008.jpg","/img/009.jpg","/img/019.jpg","/img/015.jpg","/img/01c8f15aeac135a801207fa16836ae.jpg@1280w_1l_2o_100sh.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
