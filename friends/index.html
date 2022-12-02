@@ -63,8 +63,8 @@
   --color-card: #fff;
   --color-text: #444;
   --color-block: #f6f6f6;
-  --color-inlinecode: rgba(255,0,0,0);
-  --color-codeblock: rgba(255,0,0,0);
+  --color-inlinecode: #444;
+  --color-codeblock: #fff;
   --color-h1: #444;
   --color-h2: #444;
   --color-h3: #444;
@@ -73,7 +73,7 @@
   --color-h6: #444;
   --color-p: #444;
   --color-list: #666;
-  --color-list-hl: rgba(0,0,0,0.2);
+  --color-list-hl: #363636;
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
@@ -95,13 +95,13 @@
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: rgba(255,0,0,0);
+  background: #444;
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,0,0,0);
+  background: #444;
 }
 html {
   color: var(--color-text);
@@ -118,13 +118,13 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: rgba(255,0,0,0);
+  background: #444;
   cursor: pointer;
   border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,0,0,0);
+  background: #444;
 }
 body {
   background-color: var(--color-site-body);
@@ -147,7 +147,7 @@ body.modal-active {
   }
 }
 a {
-  color: rgba(255,0,0,0);
+  color: #444;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -158,7 +158,7 @@ a {
   -ms-transition: all 0.28s ease;
 }
 a:hover {
-  color: rgba(255,0,0,0);
+  color: #444;
 }
 a:active,
 a:hover {
@@ -772,7 +772,7 @@ button {
 .cover-wrapper.dock .menu .list-h a.active i+p,
 .cover-wrapper.featured .menu .list-h a.active i+p,
 .cover-wrapper.focus .menu .list-h a.active i+p {
-  color: rgba(255,0,0,0);
+  color: #444;
 }
 .cover-wrapper.dock .menu .list-h a.active img+p,
 .cover-wrapper.featured .menu .list-h a.active img+p,
@@ -784,15 +784,50 @@ button {
 .cover-wrapper.focus .menu .list-h a:hover {
   background: var(--color-card);
 }
-.cover-wrapper.featured .menu .list-h {
-  margin: -2px;
+.cover-wrapper.dock .top {
+  margin-bottom: 48px;
 }
-.cover-wrapper.featured .menu .list-h a {
-  margin: 2px;
+.cover-wrapper.dock .menu {
   background: rgba(255,255,255,0.5);
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+}
+.cover-wrapper.dock .menu .list-h {
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  margin: 4px;
+}
+.cover-wrapper.dock .menu .list-h a+a {
+  margin-left: 4px;
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper.dock .menu .list-h {
+    overflow-x: scroll;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb {
+    background: #444;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
 }
 @supports (backdrop-filter: blur(20px)) {
-  .cover-wrapper.featured .menu .list-h a {
+  .cover-wrapper.dock .menu {
     background: rgba(255,255,255,0.5);
     backdrop-filter: saturate(200%) blur(20px);
   }
@@ -886,7 +921,7 @@ button {
     --color-h6: #ddd;
     --color-p: #bbb;
     --color-list: #aaa;
-    --color-list-hl: rgba(255,255,255,0.2);
+    --color-list-hl: #696969;
     --color-meta: #888;
     --color-link: #888;
     --color-copyright-bkg: #21252b;
@@ -958,7 +993,7 @@ button {
   --color-h6: #ddd;
   --color-p: #bbb;
   --color-list: #aaa;
-  --color-list-hl: rgba(255,255,255,0.2);
+  --color-list-hl: #696969;
   --color-meta: #888;
   --color-link: #888;
   --color-copyright-bkg: #21252b;
@@ -1227,7 +1262,7 @@ button {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  color: rgba(255,0,0,0);
+  color: #444;
 }
 .l_header .switcher >li >a:hover {
   border: none;
@@ -1407,7 +1442,7 @@ ul.m-pc >li>a {
 }
 ul.m-pc >li>a:active,
 ul.m-pc >li>a.active {
-  border-bottom: 2px solid rgba(255,0,0,0);
+  border-bottom: 2px solid #444;
 }
 ul.m-pc li:hover >ul.list-v,
 ul.list-v li:hover >ul.list-v {
@@ -1546,7 +1581,7 @@ ul.list-v >li>a:hover {
 }
 .l_header ul.nav-list-h>li >a:active,
 .l_header ul.nav-list-h>li >a.active {
-  color: rgba(255,0,0,0);
+  color: #444;
 }
 .l_header ul.nav-list-h>li:hover>a {
   color: var(--color-list-hl);
@@ -2337,7 +2372,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669954674115),
+    lastupdate: new Date(1669975318100),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2724,7 +2759,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper friends featured' style="display: ;">
+      <div id="half" class='cover-wrapper friends dock' style="display: ;">
         
   <div id="parallax-window"></div>
 
@@ -3413,7 +3448,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><a href="/">首页图片来源自网络，侵删 本站使用volantis作为主题</a></p>
+          <div><p><a href="/">首页图片来源自网络，侵删 本站使用volantis6.0作为主题</a></p>
 </div>
         
       
@@ -4171,7 +4206,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["/img/008.jpg","/img/009.jpg","/img/019.jpg","/img/015.jpg","/img/01c8f15aeac135a801207fa16836ae.jpg@1280w_1l_2o_100sh.jpg"];
+  let imgs = ["/img/019.jpg","/img/009.jpg","/img/008.jpg","/img/01c8f15aeac135a801207fa16836ae.jpg@1280w_1l_2o_100sh.jpg","/img/015.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
