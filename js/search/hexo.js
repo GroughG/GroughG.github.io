@@ -1,5 +1,5 @@
 let SearchService = (() => {
-  fn = {};
+  const fn = {};
   fn.queryText = null;
   fn.data = null;
   fn.template = `<div id="u-search">
@@ -8,10 +8,10 @@ let SearchService = (() => {
       <form id="u-search-modal-form" class="u-search-form" name="uSearchModalForm">
         <input type="text" id="u-search-modal-input" class="u-search-input" />
         <button type="submit" id="u-search-modal-btn-submit" class="u-search-btn-submit">
-          <span class="fas fa-search"></span>
+          <span class="fa-solid fa-search"></span>
         </button>
       </form>
-      <a id="u-search-btn-close" class="btn-close"> <span class="fas fa-times"></span> </a>
+      <a id="u-search-btn-close" class="btn-close"> <span class="fa-solid fa-times"></span> </a>
     </header>
     <main class="modal-body">
       <ul class="modal-results"></ul>
@@ -20,7 +20,7 @@ let SearchService = (() => {
   <div id="modal-overlay" class="modal-overlay"></div>
 </div>
 `;
-  fn.init = () => {
+  fn.init = async () => {
     let div = document.createElement("div");
     div.innerHTML += fn.template;
     document.body.append(div);
@@ -35,6 +35,9 @@ let SearchService = (() => {
     document
       .querySelector("#modal-overlay")
       .addEventListener("click", fn.close, false);
+    if (!fn.data) {
+      fn.data = await fn.fetchData();
+    }
   };
   fn.onSubmit = (event) => {
     event.preventDefault();
@@ -58,10 +61,12 @@ let SearchService = (() => {
       fn.data = await fn.fetchData();
     }
     let results = "";
-    results += fn.buildResultList(data.pages);
-    results += fn.buildResultList(data.posts);
+    results += fn.buildResultList(fn.data.pages);
+    results += fn.buildResultList(fn.data.posts);
+    if (results === "") {
+      results = `<div id="resule-hits-empty"><i class="fa-solid fa-box-open"></i><p>${volantis.GLOBAL_CONFIG.languages.search.hits_empty.replace(/\$\{query}/, fn.queryText)}</p></div>`
+    }
     document.querySelector("#u-search .modal-results").innerHTML = results;
-    window.pjax && pjax.refresh(document.querySelector("#u-search"));
     document.addEventListener("keydown", function f(event) {
       if (event.code === "Escape") {
         fn.close();
@@ -73,10 +78,10 @@ let SearchService = (() => {
     document.querySelector("#u-search").style.display = "none";
   };
   fn.fetchData = () => {
-    return fetch(SearchServiceDataPath)
+    return fetch(volantis.GLOBAL_CONFIG.search.dataPath)
       .then((response) => response.text())
       .then((res) => {
-        data = JSON.parse(res);
+        const data = JSON.parse(res);
         // console.log(data);
         return data;
       });
@@ -86,6 +91,9 @@ let SearchService = (() => {
     data.forEach((post) => {
       if (post.text) {
         post.text = post.text.replace(/12345\d*/g, "") // 简易移除代码行号
+      }
+      if (!post.title && post.text) {
+        post.title = post.text.trim().slice(0, 15)
       }
       if (fn.contentSearch(post)) {
         html += fn.buildResult(post.permalink, post.title, post.digest);
@@ -183,7 +191,3 @@ let SearchService = (() => {
 Object.freeze(SearchService);
 
 SearchService.init();
-document.addEventListener("pjax:success", SearchService.init);
-document.addEventListener("pjax:send", function () {
-  document.querySelector("#u-search").style.display = "none";
-});
